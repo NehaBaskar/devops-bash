@@ -6,6 +6,9 @@ fileCount=$3
 if [ -d "$folderName" ]; then
     echo "Folder Already Exists !!"
     exit 74
+elif (( fileCount <= 1 && fileCount >= 9 )); then
+    echo "Invaild File Count..$fileCount"
+    exit 74
 else
     mkdir -p "$folderName"
     if [ $? -eq 0 ]; then
